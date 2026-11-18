@@ -2,10 +2,10 @@
 
 Análisis de los destinos de la celulosa y la madera exportadas por Uruguay, con datos de UN Comtrade. Retoma una pregunta abierta de mi tesis de maestría sobre certificación forestal y EUDR: cuánto pesa hoy Europa como mercado y qué tan rápido está cambiando la geografía de los compradores.
 
-**Lectura rápida:** [Nota de análisis (PDF, 2 páginas)](nota/Nota_celulosa_destinos_Costa.pdf)
+**Lectura rápida:** [Nota de análisis (PDF, 2 páginas)](Nota_celulosa_destinos_Costa.pdf)
 **Detalle y código:** [`analisis_destinos_forestales.ipynb`](analisis_destinos_forestales.ipynb)
 
-![Destinos de la celulosa](figuras/celulosa_destinos.png)
+![Destinos de la celulosa](celulosa_destinos.png)
 
 ## Resultados
 
@@ -14,21 +14,21 @@ Análisis de los destinos de la celulosa y la madera exportadas por Uruguay, con
 - La concentración de compradores (IHH) vuelve a subir desde 2023: baja la dependencia de un marco regulatorio y sube la dependencia de un único comprador.
 - Un punto metodológico: la celulosa casi no aparece en las estadísticas aduaneras que Uruguay informa, porque las plantas operan en zonas francas. Para medirla uso datos espejo, es decir, lo que declaran los países importadores.
 
-## Estructura
+## Archivos
 
-```
-├── nota/                                   nota de análisis en PDF
-├── analisis_destinos_forestales.ipynb      análisis completo
-├── src/descarga_comtrade.py                descarga desde la API pública de Comtrade
-├── data/                                   datos procesados (CSV)
-└── figuras/                                gráficos
-```
+| Archivo | Contenido |
+|---|---|
+| `Nota_celulosa_destinos_Costa.pdf` | Nota de análisis de 2 páginas |
+| `analisis_destinos_forestales.ipynb` | Análisis completo con código |
+| `descarga_comtrade.py` | Descarga desde la API pública de Comtrade |
+| `*.csv` | Datos procesados |
+| `*.png` | Gráficos |
 
 ## Reproducir
 
 ```bash
 pip install -r requirements.txt
-python src/descarga_comtrade.py      # opcional, vuelve a bajar los datos
+python descarga_comtrade.py      # opcional, vuelve a bajar los datos
 jupyter notebook analisis_destinos_forestales.ipynb
 ```
 

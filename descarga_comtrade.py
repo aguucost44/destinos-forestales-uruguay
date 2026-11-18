@@ -6,7 +6,7 @@ Usa el endpoint público de vista previa de la API de Comtrade (no requiere clav
     con Uruguay como origen (partner 858).
 
 Uso:  python src/descarga_comtrade.py
-Salida: data/raw/*.csv  (una fila por año, producto y socio)
+Salida: descargas/*.csv  (una fila por año, producto y socio)
 """
 import time
 from pathlib import Path
@@ -16,7 +16,7 @@ import requests
 
 BASE = "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
 ANIOS = range(2015, 2026)
-SALIDA = Path(__file__).resolve().parents[1] / "data" / "raw"
+SALIDA = Path(__file__).resolve().parent / "descargas"
 
 
 def consultar(params: dict, reintentos: int = 6) -> list[dict]:
